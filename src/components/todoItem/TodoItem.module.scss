@@ -1,0 +1,83 @@
+.container {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+
+  .leftPart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    .text {
+      font-size: 14px;
+      display: block;
+      max-width: 423px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      visibility: hidden;
+      position: absolute;
+      margin: 0;
+    }
+
+    .checkboxIndicator {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      border: 1px solid #000000;
+      border-radius: 4px;
+      display: inline-block;
+      background-color: #fff;
+      transition: all 0.2s ease;
+      position: relative;
+      transition: 0.3s ease;
+
+      &:hover {
+        opacity: 0.2;
+      }
+    }
+
+    input[type="checkbox"]:checked + .checkboxIndicator::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 7px;
+      height: 10px;
+      border: solid rgb(0, 0, 0);
+      border-width: 0 1px 1px 0;
+      transform: rotate(45deg);
+    }
+
+    strong {
+      font-size: 10px;
+      align-self: flex-end;
+    }
+  }
+
+  .rightPart {
+    .removeButton {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      transition: 0.3s ease;
+
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+.eblo {
+  display: none;
+}
